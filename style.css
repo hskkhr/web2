@@ -8,7 +8,7 @@ h1{
     border-bottom:1px solid gray;
     text-align:center;
 }
-#gridol{
+#grid>ol{
     border-right: 1px solid gray;
     width:100px;
     margin:0;
