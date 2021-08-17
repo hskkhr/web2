@@ -4,32 +4,38 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <script>
-            function setBgColor(color){
-                document.querySelector('body').style.backgroundColor = color;
+            var Body = {
+                setFontColor: function(color){
+                    document.querySelector('body').style.color = color; 
+                },
+                setBgColor: function(color){
+                    document.querySelector('body').style.backgroundColor = color;
+                }
             }
-            function setFontColor(color){
-                document.querySelector('body').style.color = color;
-            }
-            function setLinkColor(color){
-                var alist = document.querySelectorAll('a');
+
+            var Links = {
+                setColor: function(color){
+                    var alist = document.querySelectorAll('a');
                     var i = 0;
                     while(i<alist.length){
                         alist[i].style.color = color;
                         i = i+1;
                     }
+                }
             }
+
             function nightDayHandler(self){
                 var target = document.querySelector('body');
                 if(self.value === 'night'){
-                    setBgColor('black');
-                    setFontColor('white');
-                    setLinkColor('powderblue');
+                    Body.setBgColor('black');
+                    Body.setFontColor('white');
+                    Links.setColor('powderblue');
                     self.value = 'day';
                 }
                 else{
-                    setBgColor('white');
-                    setFontColor('black');
-                    setLinkColor('blue');
+                    Body.setBgColor('white');
+                    Body.setFontColor('black');
+                    Links.setColor('blue');
                     self.value = 'night';
                 }
             }
