@@ -6,14 +6,16 @@
     </head>
     <body>
         <h1><a href="0.html">WEB</a></h1>
-        <input type="button" value="night" 
-            onclick="document.querySelector('body').style.backgroundColor='black';
-            document.querySelector('body').style.color='white'
-        ">
-        <input type="button" value="day" 
-            onclick="document.querySelector('body').style.backgroundColor='white';
-            document.querySelector('body').style.color='black'
-        ">
+        <input type="button" id="day_night" value="night" onclick="
+            if(document.querySelector('#day_night').value === 'night'){
+                document.querySelector('body').style.backgroundColor='black';
+                document.querySelector('body').style.color='white'
+                document.querySelector('#day_night').value = 'day'}
+            else{
+                document.querySelector('body').style.backgroundColor='white';
+                document.querySelector('body').style.color='black'
+                document.querySelector('#day_night').value = 'night'
+            }">
         <div id="grid">
             <ol>
                 <li><a href="1.html">HTML</a></li>
